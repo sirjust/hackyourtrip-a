@@ -7,6 +7,13 @@ import HomeScreen from "../screens/HomeScreen";
 
 class index extends Component
 {
+    async componentWillMount() {
+        await Expo.Font.loadAsync({
+            'Roboto': require('native-base/Fonts/Roboto.ttf'),
+            'Roboto_medium': require('native-base/Fonts/Roboto_medium.ttf'),
+        });
+    }
+
     render()
     {
         return (
@@ -16,34 +23,4 @@ class index extends Component
 }
 
 
-
-
 export default index;
-
-
-// class HomeScreen extends React.Component {
-//     render() {
-//         return (
-//             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//                 <Text>Home!</Text>
-//             </View>
-//         );
-//     }
-// }
-//
-// class SettingsScreen extends React.Component {
-//     render() {
-//         return (
-//             <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//                 <Text>SettingsScreen!</Text>
-//             </View>
-//         );
-//     }
-// }
-//
-// const TabNavigator = createBottomTabNavigator({
-//     Home: HomeScreen,
-//     SettingsScreen: SettingsScreen,
-// });
-//
-// export default createAppContainer(TabNavigator);
